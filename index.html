@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <title>Alexander Pavlenko — 3D Motion Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -19,42 +19,54 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Golos Text',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden; position: relative; }
 
-.container { max-width: 1100px; margin: auto; padding: 0 40px; position: relative; }
+.container { max-width: 1100px; margin: auto; padding: 0 20px; position: relative; }
 .glass { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.8); border-radius: 24px; position: relative; z-index: 1; box-shadow: var(--shadow); }
 
-.shape-1 { position: absolute; top: 350px; right: 30%; width: 450px; z-index: -1; opacity: 0.95; }
-.shape-2 { position: absolute; top: 1060px; left: 15%; width: 400px; z-index: -1; opacity: 0.95; }
-.shape-3 { position: absolute; top: 2000px; right: 25%; width: 500px; z-index: -1; opacity: 0.95; }
+.shape-1 { position: absolute; top: 350px; right: 10%; width: 200px; z-index: -1; opacity: 0.8; }
+.shape-2 { position: absolute; top: 1200px; left: 5%; width: 180px; z-index: -1; opacity: 0.8; }
+.shape-3 { position: absolute; top: 2200px; right: 5%; width: 220px; z-index: -1; opacity: 0.8; }
 
-.hero { padding: 120px 0 80px; }
-.hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 50px; background: #fff; margin-bottom: 24px; font-weight: 500; }
+.hero { padding: 60px 0; }
+.hero-content { display: flex; flex-direction: column; gap: 30px; text-align: center; }
+.badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 50px; background: #fff; margin: 0 auto 20px; font-weight: 500; }
 .avatar { width: 32px; height: 32px; border-radius: 50%; background: #ddd; overflow: hidden; }
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
-h1 { font-size: 64px; line-height: 1; letter-spacing: -2px; margin-bottom: 24px; }
+h1 { font-size: 36px; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
 
-/* Кнопка с эффектом подсветки */
-.btn { display: inline-block; padding: 16px 32px; background: var(--accent); border-radius: 16px; font-weight: 700; text-decoration: none; color: #111; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(198, 255, 0, 0.6); }
+.btn { display: inline-block; padding: 16px 32px; background: var(--accent); border-radius: 16px; font-weight: 700; text-decoration: none; color: #111; transition: transform 0.3s ease; width: 100%; max-width: 300px; }
+.btn:hover { transform: translateY(-2px); }
 
-.section-title { font-size: 48px; margin-bottom: 40px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.card { padding: 30px; height: auto; }
-.features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.section-title { font-size: 30px; margin-bottom: 30px; text-align: center; }
+.grid-3 { display: grid; gap: 20px; }
+.card { padding: 30px; }
+.features { display: grid; gap: 20px; }
 .feature { padding: 30px; }
 
-.card h3, .feature h3 { color: var(--text); margin-bottom: 15px; }
+.card h3, .feature h3 { color: var(--text); margin-bottom: 10px; }
 .card p, .feature p { color: var(--secondary); font-size: 0.95em; }
 
-.arrow-down { margin: 40px 0; display: block; font-size: 24px; text-align: center; }
-.quote-box { text-align: center; padding: 80px 60px; margin: 120px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.quote-text { font-size: 28px; max-width: 800px; margin: auto; }
+.arrow-down { margin: 30px 0; display: block; font-size: 20px; text-align: center; }
+.quote-box { text-align: center; padding: 40px 20px; margin: 60px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.quote-text { font-size: 20px; max-width: 800px; margin: auto; }
 
-.cta-section { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 180px auto; max-width: 800px; }
+.cta-section { display: flex; flex-direction: column; align-items: center; text-align: center; margin: 60px auto; padding: 0 20px; }
 
 footer { padding: 40px 0; text-align: center; }
 footer a { color: var(--text); text-decoration: none; margin: 0 10px; }
-footer a:hover { color: var(--secondary); }
+
+@media (min-width: 768px) {
+    .container { padding: 0 40px; }
+    .shape-1 { width: 450px; right: 30%; }
+    .shape-2 { width: 400px; left: 15%; }
+    .shape-3 { width: 500px; right: 25%; }
+    .hero { padding: 120px 0 80px; }
+    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; text-align: left; }
+    h1 { font-size: 64px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .features { grid-template-columns: repeat(2, 1fr); }
+    .section-title { font-size: 48px; }
+    .btn { width: auto; }
+}
 </style>
 </head>
 <body>
@@ -72,20 +84,18 @@ footer a:hover { color: var(--secondary); }
                     Олександр Павленко
                 </div>
                 <h1>Допомагаю бізнесу виділятись і продавати через 3D-візуал</h1>
-                <p>отримуйте консультацію, 
-замовляйте прорахунок власного проєкту та 
-дізнавайся про унікальну пропозицію саме для вас.</p>
+                <p>Отримуйте консультацію, замовляйте прорахунок власного проєкту та дізнавайся про унікальну пропозицію.</p>
                 <div style="margin-top: 30px;">
                     <a href="https://tally.so/r/5BMvpb" target="_blank" class="btn">Отримати консультацію</a>
                 </div>
             </div>
             <div class="glass" style="padding: 30px;">
                 <h3>Послуги</h3>
-                <ul style="list-style: none; margin-top: 20px;">
-                    <li>3D Product Animation</li>
-                    <li>CGI Visuals</li>
-                    <li>3D Motion Design</li>
-                    <li>Product Rendering</li>
+                <ul style="list-style: none; margin-top: 20px; color: var(--secondary);">
+                    <li>• 3D Product Animation</li>
+                    <li>• CGI Visuals</li>
+                    <li>• 3D Motion Design</li>
+                    <li>• Product Rendering</li>
                 </ul>
             </div>
         </div>
@@ -99,19 +109,16 @@ footer a:hover { color: var(--secondary); }
         <h2 class="section-title">Як ми працюємо</h2>
         <div class="grid-3">
             <div class="card glass">
-                <h3>01. Тест-драйв проєкту</h3>
-                <p>Унікальна пропозиція
-до початку повноцінної роботи. Детальніше на консультації.</p>
+                <h3>01. Тест-драйв</h3>
+                <p>Унікальна пропозиція до початку повноцінної роботи.</p>
             </div>
             <div class="card glass">
                 <h3>02. Системний підхід</h3>
-                <p>Два етапи правок проєкту
-вже включені в прайс..</p>
+                <p>Два етапи правок проєкту вже включені в прайс.</p>
             </div>
             <div class="card glass">
                 <h3>03. Повний цикл</h3>
-                <p>Від моделювання 
-до фінального рендеру..</p>
+                <p>Від моделювання до фінального рендеру.</p>
             </div>
         </div>
     </div>
@@ -119,11 +126,9 @@ footer a:hover { color: var(--secondary); }
 
 <div class="container">
     <div class="quote-box">
-        <p class="quote-text">Класно працювати з брендами, які цінують якісний візуал і розуміють, що 3D-моушн — це інструмент підсилення позиціонування та підвищення чеку.</p>
+        <p class="quote-text">Класно працювати з брендами, які цінують якісний візуал і розуміють, що 3D — це інструмент підсилення.</p>
     </div>
 </div>
-
-<div class="container"><span class="arrow-down">↓</span></div>
 
 <section>
     <div class="container">
@@ -135,24 +140,23 @@ footer a:hover { color: var(--secondary); }
             </div>
             <div class="feature glass">
                 <h3>Гнучкість</h3>
-                <p>Будь-які ракурси та сцени без необхідності дорогої зйомки.</p>
+                <p>Ракурси без необхідності дорогої зйомки.</p>
             </div>
             <div class="feature glass">
                 <h3>Масштабування</h3>
-                <p>Один 3D-асет для сайту, реклами та соцмереж.</p>
+                <p>Один 3D-асет для всіх каналів продажу.</p>
             </div>
             <div class="feature glass">
                 <h3>Контроль</h3>
-                <p>Повний цикл розробки з чіткими термінами та якісним результатом.</p>
+                <p>Повний цикл з чіткими термінами та результатом.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container cta-section">
+<section class="cta-section">
     <h2>Готові обговорити ваш проєкт?</h2>
-    <p style="margin-top: 10px; color: var(--secondary);">Заповнюйте бриф, а я запропоную оптимальний варіант співпраці.</p>
-    <a href="https://tally.so/r/5BMvpb" target="_blank" class="btn" style="margin-top: 30px;">Отримати консультацію</a>
+    <a href="https://tally.so/r/5BMvpb" target="_blank" class="btn" style="margin-top: 20px;">Отримати консультацію</a>
 </section>
 
 <footer>
