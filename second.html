@@ -13,51 +13,54 @@
     --accent: #c6ff00;
     --border: rgba(0,0,0,.08);
     --glass-bg: rgba(255,255,255,.65);
-    --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05);
+    --shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Golos Text',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden; }
+body { font-family:'Golos Text',sans-serif; background:var(--bg); color:var(--text); line-height:1.5; overflow-x:hidden; }
 
-.container { max-width: 1100px; margin: auto; padding: 0 20px; position: relative; }
-.glass { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.8); border-radius: 24px; position: relative; z-index: 1; box-shadow: var(--shadow); }
+.container { max-width: 1100px; margin: auto; padding: 0 20px; }
+.glass { background: var(--glass-bg); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,.8); border-radius: 20px; box-shadow: var(--shadow); }
 
-.hero { padding: 80px 0 40px; }
-.hero-content { display: grid; grid-template-columns: 1fr; gap: 40px; text-align: center; }
-.badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 50px; background: #fff; margin-bottom: 20px; font-weight: 500; }
-.avatar { width: 32px; height: 32px; border-radius: 50%; background: #ddd; overflow: hidden; }
+.hero { padding: 60px 0; }
+.hero-content { display: flex; flex-direction: column; gap: 30px; text-align: center; }
+.badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 50px; background: #fff; margin: 0 auto 20px; font-weight: 500; font-size: 14px; }
+.avatar { width: 30px; height: 30px; border-radius: 50%; background: #eee; overflow: hidden; }
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
-h1 { font-size: 40px; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
 
-.btn { display: inline-block; padding: 16px 32px; background: var(--accent); border-radius: 16px; font-weight: 700; text-decoration: none; color: #111; transition: transform 0.3s ease; }
-.btn:hover { transform: translateY(-2px); }
+h1 { font-size: 32px; line-height: 1.1; letter-spacing: -1px; margin-bottom: 15px; }
+p { color: var(--secondary); margin-bottom: 20px; }
 
-.section-title { font-size: 32px; margin-bottom: 30px; text-align: center; }
-.grid-3 { display: grid; grid-template-columns: 1fr; gap: 20px; }
-.card { padding: 25px; }
-.features { display: grid; grid-template-columns: 1fr; gap: 20px; }
-.feature { padding: 25px; }
+.btn { display: inline-block; padding: 14px 28px; background: var(--accent); border-radius: 12px; font-weight: 700; text-decoration: none; color: #111; font-size: 15px; }
 
-.card h3, .feature h3 { color: var(--text); margin-bottom: 10px; }
-.card p, .feature p { color: var(--secondary); font-size: 0.95em; }
+.section-title { font-size: 28px; margin-bottom: 25px; text-align: center; }
+.grid-3 { display: grid; gap: 15px; }
+.card { padding: 20px; }
 
-.arrow-down { margin: 30px 0; display: block; font-size: 20px; text-align: center; }
-.quote-box { text-align: center; padding: 40px 20px; margin: 60px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.quote-text { font-size: 20px; }
+.features { display: grid; gap: 15px; }
+.feature { padding: 20px; }
 
-.cta-section { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 80px auto; }
+.card h3, .feature h3 { font-size: 18px; color: var(--text); margin-bottom: 8px; }
+.card p, .feature p { font-size: 14px; color: var(--secondary); }
 
-footer { padding: 40px 0; text-align: center; }
-footer a { color: var(--text); text-decoration: none; margin: 0 5px; }
+.arrow-down { margin: 40px 0; display: block; font-size: 20px; text-align: center; }
+.quote-box { text-align: center; padding: 40px 20px; margin: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.quote-text { font-size: 18px; line-height: 1.4; }
+
+.cta-section { text-align: center; padding: 60px 20px; }
+
+footer { padding: 30px 0; text-align: center; font-size: 14px; }
+footer a { color: var(--text); text-decoration: none; margin: 0 8px; }
 
 @media (min-width: 768px) {
     .container { padding: 0 40px; }
-    .hero-content { grid-template-columns: 1fr 1fr; text-align: left; }
-    h1 { font-size: 64px; }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .features { grid-template-columns: repeat(2, 1fr); }
-    .section-title { font-size: 48px; }
-    .quote-text { font-size: 28px; }
+    .hero-content { flex-direction: row; text-align: left; align-items: center; }
+    .hero-content > div { flex: 1; }
+    h1 { font-size: 56px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .features { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .section-title { font-size: 40px; }
+    .quote-text { font-size: 24px; }
 }
 </style>
 </head>
@@ -68,45 +71,41 @@ footer a { color: var(--text); text-decoration: none; margin: 0 5px; }
         <div class="hero-content">
             <div>
                 <div class="badge glass">
-                    <div class="avatar"><img src="profile.jpg.jpg" alt="Avatar"></div> 
+                    <div class="avatar"><img src="profile.jpg.jpg" alt="Аватар"></div> 
                     Олександр Павленко
                 </div>
-                <h1>Допомагаю бізнесу виділятись і продавати через 3D-візуал</h1>
+                <h1>Допомагаю бізнесу виділятись через 3D-візуал</h1>
                 <p>Отримуйте консультацію, заповнюйте бриф та прораховуйте проект.</p>
-                <div style="margin-top: 30px;">
-                    <a href="https://tally.so/r/5BMvpb" target="_blank" class="btn">Отримати консультацію</a>
-                </div>
+                <a href="https://tally.so/r/5BMvpb" target="_blank" class="btn">Отримати консультацію</a>
             </div>
-            <div class="glass" style="padding: 30px;">
+            <div class="glass" style="padding: 25px;">
                 <h3>Послуги</h3>
-                <ul style="list-style: none; margin-top: 20px;">
-                    <li>3D Product Animation</li>
-                    <li>CGI Visuals</li>
-                    <li>3D Motion Design</li>
-                    <li>Product Rendering</li>
+                <ul style="list-style: none; margin-top: 15px; font-size: 14px; color: var(--secondary);">
+                    <li>• 3D Product Animation</li>
+                    <li>• CGI Visuals</li>
+                    <li>• 3D Motion Design</li>
+                    <li>• Product Rendering</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<div class="container"><span class="arrow-down">↓</span></div>
-
 <section>
     <div class="container">
         <h2 class="section-title">Як ми працюємо</h2>
         <div class="grid-3">
             <div class="card glass">
-                <h3>01. Тест-драйв проєкту</h3>
-                <p>Узгоджуємо напрям, візуальну мову та технічні деталі на старті.</p>
+                <h3>01. Тест-драйв</h3>
+                <p>Узгоджуємо напрям та технічні деталі на старті.</p>
             </div>
             <div class="card glass">
                 <h3>02. Системний підхід</h3>
-                <p>Крок за кроком перетворюємо ідею на реалістичний 3D-візуал.</p>
+                <p>Перетворюємо ідею на реалістичний 3D-візуал.</p>
             </div>
             <div class="card glass">
                 <h3>03. Повний цикл</h3>
-                <p>Ви отримуєте фінальний рендер, готовий до використання в бізнесі.</p>
+                <p>Ви отримуєте фінальний рендер для бізнесу.</p>
             </div>
         </div>
     </div>
@@ -114,7 +113,7 @@ footer a { color: var(--text); text-decoration: none; margin: 0 5px; }
 
 <div class="container">
     <div class="quote-box">
-        <p class="quote-text">Я працюю з брендами, які цінують якісний візуал і розуміють, що 3D-моушн — це інструмент підсилення позиціонування та підвищення чеку.</p>
+        <p class="quote-text">Я працюю з брендами, які цінують якісний візуал і розуміють, що 3D — це інструмент підсилення позиціонування.</p>
     </div>
 </div>
 
@@ -128,33 +127,30 @@ footer a { color: var(--text); text-decoration: none; margin: 0 5px; }
             </div>
             <div class="feature glass">
                 <h3>Гнучкість</h3>
-                <p>Будь-які ракурси та сцени без необхідності дорогої зйомки.</p>
+                <p>Ракурси без необхідності дорогої зйомки.</p>
             </div>
             <div class="feature glass">
                 <h3>Масштабування</h3>
-                <p>Один 3D-асет для сайту, реклами та всіх соцмереж.</p>
+                <p>Один 3D-асет для всіх каналів продажу.</p>
             </div>
             <div class="feature glass">
                 <h3>Контроль</h3>
-                <p>Повний цикл розробки з чіткими термінами та якісним результатом.</p>
+                <p>Повний цикл з чіткими термінами.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container cta-section">
-    <h2>Готові обговорити ваш проєкт?</h2>
-    <p style="margin-top: 10px; color: var(--secondary);">Заповнюйте бриф, а я запропоную оптимальний формат співпраці.</p>
-    <a href="https://tally.so/r/5BMvpb" target="_blank" class="btn" style="margin-top: 30px;">Отримати консультацію</a>
+<section class="cta-section">
+    <h2>Готові обговорити проєкт?</h2>
+    <p style="margin-top: 10px;">Заповнюйте бриф, а я запропоную формат співпраці.</p>
+    <a href="https://tally.so/r/5BMvpb" target="_blank" class="btn" style="margin-top: 25px;">Отримати консультацію</a>
 </section>
 
 <footer>
-    <p>Contact</p>
-    <div style="margin-top: 20px;">
-        <a href="https://www.instagram.com/pavlenko.designs" target="_blank">Instagram</a> | 
-        <a href="https://t.me/pavlenko_designs" target="_blank">Telegram</a> | 
-        <a href="mailto:alexandr.pavlenko.work@gmail.com">Email</a>
-    </div>
+    <a href="https://www.instagram.com/pavlenko.designs" target="_blank">Instagram</a> | 
+    <a href="https://t.me/pavlenko_designs" target="_blank">Telegram</a> | 
+    <a href="mailto:alexandr.pavlenko.work@gmail.com">Email</a>
 </footer>
 
 </body>
