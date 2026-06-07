@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бриф на 3D проєкт</title>
+    <title>Бриф на 3D проєкт — Alexander Pavlenko</title>
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -33,7 +33,6 @@
             background: rgba(255, 255, 255, 0.7);
         }
 
-        /* Стиль рідкого скла для чекбоксів */
         .checkbox-wrapper { display: flex; align-items: center; cursor: pointer; gap: 12px; }
         .checkbox-input { display: none; }
         .checkbox-box { 
@@ -51,7 +50,7 @@
         }
         .checkbox-input:checked + .checkbox-box::after { transform: scale(1); }
 
-        .btn-send { background: #e5e7eb; color: #9ca3af; padding: 20px 40px; border-radius: 50px; font-weight: 700; transition: all 0.4s; width: 100%; }
+        .btn-send { background: #e5e7eb; color: #9ca3af; padding: 20px 40px; border-radius: 50px; font-weight: 700; transition: all 0.4s; width: 100%; cursor: pointer; }
         .btn-send.active { background: var(--accent); color: #111; box-shadow: 0 0 20px rgba(198, 255, 0, 0.6); }
         .star { color: #ff0000; margin-left: 4px; }
     </style>
@@ -61,12 +60,8 @@
     <div class="container max-w-xl mx-auto px-6">
         <header class="mb-12">
             <h1 class="text-4xl font-bold mb-4">Вітаю!<br>Радий, що ви тут.</h1>
-            <p class="text-gray-600">Щоб створити для вашого бренду якісний 3D-ролик
- потрібно лаконічно сформувати ваш запит. 
-Цей інтерактивний бриф дуже спростить нам задачу.</p>
-            <p class="text-gray-500 text-sm mt-2">• я записав коротку відео-унструкцію 
-як заповнювати даний бриф
- - дуже раджу ознайомитись перед початком.</p>
+            <p class="text-gray-600">Цей бриф допоможе нам краще зрозуміти ваш продукт та зробити ролик, який точно сподобається вашій цільовій аудиторії.</p>
+            <p class="text-gray-500 text-sm mt-2">Це займе не більше 5-ти хвилин вашого часу.</p>
         </header>
 
         <div class="mb-12 border-2 border-dashed border-gray-300 rounded-3xl p-4 text-center">
@@ -79,95 +74,117 @@
         <form id="briefForm" class="space-y-8">
             <div>
                 <label class="font-bold text-lg">1. Який ваш продукт?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">Розкажіть, для якого продукту будемо робити 3D-ролик: фізичний товар, послуга, платформа/сайт. Прикріпіть посилання на соц.мережі чи сайт продукту.</p>
-                <input type="text" name="q1" class="glass-input" placeholder="Напишіть відповідь..." required>
+                <p class="text-sm text-gray-500 mb-2">Опишіть, що саме ми будемо рекламувати (фізичний товар, послугу тощо). Чим більше деталей, тим краще.</p>
+                <input type="text" name="product" class="glass-input" placeholder="Напишіть відповідь..." required>
             </div>
 
             <div>
                 <label class="font-bold text-lg">2. Яку ціль має виконувати 3D-ролик?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">Розкажіть, на чому мені варто зробити акцент? Наприклад: підвищити впізнаваність бренду, пояснити складний функціонал продукту або просто створити ефектний контент для соцмереж?</p>
-                <input type="text" name="q2" class="glass-input" placeholder="Напишіть відповідь..." required>
+                <p class="text-sm text-gray-500 mb-2">Поясніть, чого ми хочемо досягти в результаті? Отримання продажів, впізнаваності бренду чи просто презентація функціоналу продукту?</p>
+                <input type="text" name="goal" class="glass-input" placeholder="Напишіть відповідь..." required>
             </div>
             
             <div>
                 <label class="font-bold text-lg">3. Де ви плануєте використовувати ролик?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-4">Вкажіть платформу: Instagram Reels, сайт, презентація, вуличний рекламний банер чи інше. Це вплине на формат кадру, композицію та тривалість сцен.</p>
+                <p class="text-sm text-gray-500 mb-4">Вкажіть майданчики.</p>
                 <div class="space-y-3">
-                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" class="checkbox-input"><div class="checkbox-box"></div> Instagram</label>
-                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" class="checkbox-input"><div class="checkbox-box"></div> Сайт</label>
-                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" class="checkbox-input"><div class="checkbox-box"></div> Презентація</label>
-                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" class="checkbox-input"><div class="checkbox-box"></div> Рекламний банер</label>
-                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" class="checkbox-input"><div class="checkbox-box"></div> Інше</label>
+                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" value="Instagram" class="checkbox-input"><div class="checkbox-box"></div> Instagram</label>
+                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" value="Сайт" class="checkbox-input"><div class="checkbox-box"></div> Сайт</label>
+                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" value="Презентація" class="checkbox-input"><div class="checkbox-box"></div> Презентація</label>
+                    <label class="checkbox-wrapper"><input type="checkbox" name="platform" value="Рекламний банер" class="checkbox-input"><div class="checkbox-box"></div> Рекламний банер</label>
                 </div>
             </div>
 
             <div>
-                <label class="font-bold text-lg">4. Чи є у вас візуальні референси або орієнтири?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">Додайте 1-3 посилання на приклади 3D-моушн відео, які вам подобаються, і коротко напишіть, чим саме вони чіпляють: динамікою, світло, ритмом, сценарієм чи подачею (або всім разом).</p>
-                <input type="text" name="q4" class="glass-input" placeholder="Вставте посилання..." required>
+                <label class="font-bold text-lg">4. Візуальні референси<span class="star">*</span></label>
+                <p class="text-sm text-gray-500 mb-2">Посилання на ролики, які вам сподобались.</p>
+                <input type="text" name="refs" class="glass-input" placeholder="Вставте посилання..." required>
             </div>
 
             <div>
-                <label class="font-bold text-lg">5. Який хронометраж ролику вам потрібний?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">Напишіть, скільки має тривати ролик (10,15,30 чи 60+ секунд). Так я зможу чітко розпланувати сценарій, монтаж, структуру й прорахувати обсяг роботи..</p>
-                <input type="text" name="q5" class="glass-input" placeholder="Напишіть відповідь..." required>
+                <label class="font-bold text-lg">5. Хронометраж ролику<span class="star">*</span></label>
+                <p class="text-sm text-gray-500 mb-2">Бажаний час (15, 30 або 60 секунд).</p>
+                <input type="text" name="timing" class="glass-input" placeholder="Напишіть відповідь..." required>
             </div>
 
             <div>
-                <label class="font-bold text-lg">6. Який настрій і стиль ви хочете передати?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">Опишіть проєкт, як ви його відчуваєте - 3-5 слів, наприклад: преміально, мінімалістично, технологічно як у apple, динамічно. Це допоможе мені зловити вашу думку.</p>
-                <input type="text" name="q6" class="glass-input" placeholder="Напишіть відповідь..." required>
+                <label class="font-bold text-lg">6. Настрій і стиль<span class="star">*</span></label>
+                <p class="text-sm text-gray-500 mb-2">Динамічний, мінімалістичний, яскравий тощо.</p>
+                <input type="text" name="style" class="glass-input" placeholder="Напишіть відповідь..." required>
             </div>
 
             <div>
-                <label class="font-bold text-lg">7. Для якої аудиторії ви створюєте ролик?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">Хто має побачити ролик і зреагувати: потенційні клієнти, інвестори, партнери чи діючі користувачі? Так я зможу краще відчути вашу цільову аудиторію і створити потрібні сенси та акценти.</p>
-                <input type="text" name="q7" class="glass-input" placeholder="Напишіть відповідь..." required>
+                <label class="font-bold text-lg">7. Цільова аудиторія<span class="star">*</span></label>
+                <p class="text-sm text-gray-500 mb-2">Вік, інтереси.</p>
+                <input type="text" name="audience" class="glass-input" placeholder="Напишіть відповідь..." required>
             </div>
 
             <div>
-                <label class="font-bold text-lg">8. До якого терміну потрібен готовий ролик?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">
-
-Вкажіть бажану дату запуску або дедлайн. Якщо є фіксована дата - релізу, презентації продукту чи реклами - вкажіть її.</p>
-                <input type="date" name="q8" class="glass-input" required>
+                <label class="font-bold text-lg">8. Дедлайн<span class="star">*</span></label>
+                <p class="text-sm text-gray-500 mb-2">Дата, коли готовий ролик має бути у вас.</p>
+                <input type="date" name="deadline" class="glass-input" required>
             </div>
 
             <div>
-                <label class="font-bold text-lg">9. Чи є у вас 3D-модель вашого продукту?<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">Це питання стосується вас тільки в тому випадку, якщо у вас фізичний продукт. 
-Якщо є 3D-модель, то в якому саме форматі: obj, fbx, 3ds, blend і т.д. 
-Якщо немає - також вкажіть це.</p>
-                <input type="text" name="q9" class="glass-input" placeholder="Напишіть відповідь..." required>
+                <label class="font-bold text-lg">9. Наявність 3D-моделі<span class="star">*</span></label>
+                <p class="text-sm text-gray-500 mb-2">Якщо є — вкажіть формат. Якщо ні — ми розробимо.</p>
+                <input type="text" name="model" class="glass-input" placeholder="Напишіть відповідь..." required>
             </div>
 
             <div>
                 <label class="font-bold text-lg">10. Ваші контакти<span class="star">*</span></label>
-                <p class="text-sm text-gray-500 mb-2">Залишайте свій контакт в Telegram або електронну пошту. Туди я дам зворотній зв'язок, прайс-лист своїх послуг та надам деталі по вашому проєкту.</p>
-                <input type="text" name="q10" class="glass-input" placeholder="Ваш Telegram або пошта..." required>
+                <p class="text-sm text-gray-500 mb-2">Telegram або e-mail, щоб я міг надіслати прайс та обговорити деталі.</p>
+                <input type="text" name="contacts" class="glass-input" placeholder="Ваш Telegram або пошта..." required>
             </div>
 
             <div class="text-center pt-8">
                 <p class="font-bold text-lg mb-2">Натискайте нижче "Надіслати" і ваш бриф у мене в роботі.</p>
-                <p class="text-sm text-gray-600 mb-8">Можете бути впевнені, хвилин через 15 я вже його розгляну та напишу вам максимум за 24 години — обговоримо деталі та знайдемо для вас найкраще рішення.</p>
-                <p class="text-sm mb-4">Дякую за ваш запит та час!</p>
+                <p class="text-sm text-gray-600 mb-8">Через 15 хвилин я розгляну запит, а протягом 24 годин ми обговоримо деталі.</p>
                 <button type="submit" id="submitBtn" class="btn-send">Надіслати</button>
             </div>
         </form>
+        <div id="statusMessage" class="mt-6 text-center font-bold hidden"></div>
     </div>
 
     <script>
         const form = document.getElementById('briefForm');
         const submitBtn = document.getElementById('submitBtn');
-        function validateForm() {
-            const inputs = form.querySelectorAll('input[required]');
-            const checkboxes = form.querySelectorAll('input[name="platform"]');
-            const allFilled = Array.from(inputs).every(i => i.value !== '');
-            const checkSelected = Array.from(checkboxes).some(c => c.checked);
+        const statusMessage = document.getElementById('statusMessage');
+        const WEBHOOK_URL = 'https://hook.eu2.make.com/wu68zdzu4x8edxgisg5wawncfbdudv4l';
+
+        form.addEventListener('input', () => {
+            const allFilled = Array.from(form.querySelectorAll('input[required]:not([type="checkbox"])')).every(i => i.value !== '');
+            const checkSelected = form.querySelectorAll('input[name="platform"]:checked').length > 0;
             submitBtn.classList.toggle('active', allFilled && checkSelected);
-        }
-        form.addEventListener('input', validateForm);
-        form.addEventListener('change', validateForm);
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            data.platforms = Array.from(form.querySelectorAll('input[name="platform"]:checked')).map(c => c.value);
+            
+            submitBtn.innerText = 'Відправка...';
+            try {
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (response.ok) {
+                    statusMessage.innerText = 'Дякую! Ваш бриф успішно надіслано.';
+                    statusMessage.classList.remove('hidden', 'text-red-500');
+                    statusMessage.classList.add('text-green-600');
+                    form.reset();
+                    submitBtn.innerText = 'Надіслати';
+                    submitBtn.classList.remove('active');
+                }
+            } catch (err) {
+                statusMessage.innerText = 'Помилка, спробуйте пізніше.';
+                statusMessage.classList.remove('hidden', 'text-green-600');
+                statusMessage.classList.add('text-red-500');
+            }
+        });
     </script>
 </body>
 </html>
